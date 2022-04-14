@@ -1,11 +1,17 @@
+/* Variables globales de colores */
 :root{
     --blanco: #fff;
     --negro: #212121;
     --primario: #ffc107;
     --secundario: #0097a7;
     --gris: #757575;
+    --grisClaro: #dfe9f3;
 }
 
+/* Cambio en la fuente para hacer que todo este en rems.
+
+    ademas, correcion del padding de cada elemento.
+*/
 html{
     font-size: 62.5%;
     box-sizing: border-box;
@@ -15,11 +21,14 @@ html{
     box-sizing: inherit;
 }
 
+/* Estilos del cuerpo de la pagina */
 body{
     font-size: 16px; /*1rem = 10px*/
     font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%); /*gradiente*/
 }
 
+/* Asignando un tamaño predeterminado de fuente a los headings */
 h1{
     font-size: 3.8rem;
 }
@@ -32,21 +41,23 @@ h3{
     font-size: 1.2rem;
 }
 
+/* Alineando los headings */
 h1, h2, h3 {
     text-align: center;
 }
 
-
+/* Cambiando el tamaño del span ("Freelancer") */
 .titulo span{
     font-size: 2rem;
 }
 
+/* contenedor del nav */
 .contenedor{
-    max-width: 120rem;
+    max-width: 120rem; /* ancho maximo */
     margin: 0 auto;
 }
 
-
+/* estilos del boton contactme y el boton del formulario */
 .button{
     background-color: var(--secundario);
     color: var(--blanco);
@@ -60,22 +71,24 @@ h1, h2, h3 {
     width: 90%;
     text-align: center;
 }
-
+/* Media query del boton */
 @media (min-width: 768px){
     .button{
         width: auto;
     }
 }
     
-
+/* background del nav */
 .nav-bg{
     background-color: var(--secundario);
 }
 
+/* cambiando el displar a flex del nav y cambiandolo a columna */
 .navegacion-principal{
     display: flex;
     flex-direction: column;
 }
+/* Media query del nav para que cambie a row  */
 @media (min-width: 768px){
     .navegacion-principal{
         flex-direction: row;
@@ -83,6 +96,7 @@ h1, h2, h3 {
     }
 }
 
+/* cambiando el display de los enlaces se les añade estilos para que se acoplen al nav */
 .navegacion-principal a{
     display: block;
     text-align: center;
@@ -93,24 +107,26 @@ h1, h2, h3 {
     padding: 1rem;
 }
 
+/* estilo para que al colocar el mouse encima del item(enlace) este cambie de color */
 .navegacion-principal a:hover{
     background-color: var(--primario);
     color: var(--negro);
 }
 
+/* creando la seccion de la imagen */
 .hero{
     background-image: url('../img/hero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 450px;
-    position: relative;
+    position: relative; /* la posision del padre siempre es relativa */
 }
 
-
+/* Creando el contenedor dentro del hero */
 .contenedor-hero{
-    position: absolute;
+    position: absolute; /* la posision del hijo siempre es absoluta */
     /* background-color: rgba(0, 0, 0, .7); anterior */
-    background-color: rgba( 0 0 0 / 70%);
+    background-color: rgba( 0 0 0 / 70%); /* opacidad de la imagen */
     width: 2rem;
     height: 2rem;
     width: 100%;
@@ -119,11 +135,11 @@ h1, h2, h3 {
     /* Alinear cosas horizontal y verticalmente usando flexbox */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* alinear verticalmente */
+    justify-content: center; /* alinear horizontalmente */
 }
 
-
+/* color de los titulos y parrafos dentro del contenedor-hero */
 .contenedor-hero h2, .contenedor-hero p{
     color: var(--blanco);
 }
