@@ -15,7 +15,7 @@
 html{
     font-size: 62.5%;
     box-sizing: border-box;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y mandatory; /* para vertical. En caso de necesitar un scroll horizontal se usaria x en lugar de y*/
 }
 
 *, *:before, *:after {
@@ -117,6 +117,7 @@ h1, h2, h3 {
     display: flex;
 }
 
+/* alinear un elemento a la derecha */
 .alinear-derecha{
     justify-content: flex-end;
 }
